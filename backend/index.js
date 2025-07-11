@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import { connectDB } from "./database/data.js";
-import userRoutes from "./routes/useRroutes.js";
+import userRoutes from "./routes/userRoutes.js";
 import roadmapRoutes from "./routes/roadmapRoutes.js";
 import progressRoutes from "./routes/progressRoutes.js";
 import {
