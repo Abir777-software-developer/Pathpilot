@@ -62,19 +62,25 @@ function Roadmap() {
     const fetchroadmap = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(`/api/roadmaps/${slug}`, {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        });
+        const { data } = await axios.get(
+          `https://pathpilot-backend-9i1n.onrender.com/api/roadmaps/${slug}`,
+          {
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
         //console.log("Fetched data", data);
 
         setroadmap(data);
-        const { data: progressres } = await axios.get(`/api/progress/${slug}`, {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        });
+        const { data: progressres } = await axios.get(
+          `https://pathpilot-backend-9i1n.onrender.com/api/progress/${slug}`,
+          {
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
         console.log("progress data", progressres);
 
         // const userprogress = progressres.data?.progress?.find(
@@ -106,7 +112,7 @@ function Roadmap() {
       .map((r) => r.title);
     try {
       await axios.put(
-        `/api/progress/${slug}`,
+        `https://pathpilot-backend-9i1n.onrender.com/api/progress/${slug}`,
         { roadmapslug: slug, completedResources },
         {
           headers: {

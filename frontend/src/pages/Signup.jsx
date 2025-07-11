@@ -80,7 +80,7 @@ function signup() {
         },
       };
       const { data } = await axios.post(
-        "/api/users/register",
+        "https://pathpilot-backend-9i1n.onrender.com/api/users/register",
         { name, email, password },
         config
       );

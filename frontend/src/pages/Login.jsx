@@ -70,7 +70,7 @@ function Login() {
         },
       };
       const { data } = await axios.post(
-        "/api/users/login",
+        "https://pathpilot-backend-9i1n.onrender.com/api/users/login",
         { email, password },
         config
       );
